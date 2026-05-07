@@ -198,7 +198,7 @@ class _BattleQuizPageState extends State<BattleQuizPage> {
 
   int score = 0;
   String result = "";
-
+  bool hasAnswered = false;
   void newBattle() {
     final rand = Random();
 
@@ -216,29 +216,36 @@ class _BattleQuizPageState extends State<BattleQuizPage> {
     setState(() {
       newBattle();
       result = "";
+      hasAnswered = false;
     });
   }
   
   void checkMove(int choice) {
+  
   int best = getBestMoveIndex(player, enemy, playerMoves);
 
   double chosenDamage = calculateDamage(player, enemy, playerMoves[choice]);
   double bestDamage = calculateDamage(player, enemy, playerMoves[best]);
 
   double ratio = chosenDamage / bestDamage;
+  if (!hasAnswered) {
+    hasAnswered = true;
 
-  if (ratio == 1) {
-    score += 15;
-    result = "🔥 완벽한 선택!";
-  } else if (ratio >= 0.8) {
-    score += 8;
-    result = "👍 꽤 좋은 선택!";
-  } else if (ratio >= 0.5) {
-    score += 2;
-    result = "😐 나쁘지 않음";
-  } else {
-    score -= 5;
-    result = "❌ 비효율적인 선택";
+    if (ratio == 1) {
+      score += 15;
+      result = "🔥 완벽한 선택!";
+    } else if (ratio >= 0.8) {
+      score += 8;
+      result = "👍 꽤 좋은 선택!";
+    } else if (ratio >= 0.5) {
+      score += 2;
+      result = "😐 나쁘지 않음";
+    } else {
+      score -= 5;
+      result = "❌ 비효율적인 선택";
+    }
+    }else {
+    result = "ℹ️ 다른 기술 확인";
   }
   result +=
     "\n\n선택 기술: ${playerMoves[choice].name}"
