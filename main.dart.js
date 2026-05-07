@@ -20552,6 +20552,7 @@ _.x=_.w=$
 _.y=e
 _.z=0
 _.Q=""
+_.as=!1
 _.a=null
 _.b=f
 _.c=null},
@@ -62662,29 +62663,32 @@ B.b.Mb(r)
 s.y=r
 if(r.length>4)s.y=A.dZ(r,0,A.ex(4,"count",t.S),A.a2(r).c).dv(0)},
 a2W(){this.ap(new A.a_m(this))},
-Zl(a3){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b=this,a="\ud83d\udc4d \uaf64 \uc88b\uc740 \uc120\ud0dd!",a0="\ud83d\ude10 \ub098\uc058\uc9c0 \uc54a\uc74c",a1="\u274c \ube44\ud6a8\uc728\uc801\uc778 \uc120\ud0dd",a2=b.w
-a2===$&&A.b()
+Zl(a4){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b=this,a="\ud83d\udd25 \uc644\ubcbd\ud55c \uc120\ud0dd!",a0="\ud83d\udc4d \uaf64 \uc88b\uc740 \uc120\ud0dd!",a1="\ud83d\ude10 \ub098\uc058\uc9c0 \uc54a\uc74c",a2="\u274c \ube44\ud6a8\uc728\uc801\uc778 \uc120\ud0dd",a3=b.w
+a3===$&&A.b()
 s=b.x
 s===$&&A.b()
-r=b.Ld(a2,s,b.y)
-q=b.xc(b.w,b.x,b.y[a3])
+r=b.Ld(a3,s,b.y)
+q=b.xc(b.w,b.x,b.y[a4])
 p=b.xc(b.w,b.x,b.y[r])
 o=q/p
+if(!b.as){b.as=!0
 if(o===1){b.z+=15
-a2=b.Q="\ud83d\udd25 \uc644\ubcbd\ud55c \uc120\ud0dd!"}else if(o>=0.8){b.z+=8
 b.Q=a
-a2=a}else{a2=b.z
-if(o>=0.5){b.z=a2+2
+a3=a}else if(o>=0.8){b.z+=8
 b.Q=a0
-a2=a0}else{b.z=a2-5
+a3=a0}else{a3=b.z
+if(o>=0.5){b.z=a3+2
 b.Q=a1
-a2=a1}}s=b.y[a3]
+a3=a1}else{b.z=a3-5
+b.Q=a2
+a3=a2}}}else a3=b.Q="\u2139\ufe0f \ub2e4\ub978 \uae30\uc220 \ud655\uc778"
+s=b.y[a4]
 n=s.a
 m=B.c.M(q)
 l=B.c.M(p)
 s=b.Ak(s.b,b.x.b)
-k=B.b.p(b.w.b,b.y[a3].b)?1.5:1
-j=b.y[a3].d?"\ud2b9\uc218\uacf5\uaca9":"\ubb3c\ub9ac\uacf5\uaca9"
+k=B.b.p(b.w.b,b.y[a4].b)?1.5:1
+j=b.y[a4].d?"\ud2b9\uc218\uacf5\uaca9":"\ubb3c\ub9ac\uacf5\uaca9"
 i=b.w
 h=B.c.M(i.d)
 g=B.c.M(i.e)
@@ -62693,7 +62697,7 @@ e=B.c.M(i.r)
 d=B.c.M(i.w)
 i=B.c.M(i.x)
 c=b.x
-b.Q=a2+("\n\n\uc120\ud0dd \uae30\uc220: "+n+"\n\ub0b4 \uc120\ud0dd \ub370\ubbf8\uc9c0: "+m+" / \ucd5c\uace0 \ub370\ubbf8\uc9c0: "+l+"\n\ud0c0\uc785 \uc0c1\uc131: "+A.f(s)+"\ubc30\n\uc790\uc18d \ubcf4\uc815(STAB): "+A.f(k)+"\ubc30\n\uacf5\uaca9 \ubc29\uc2dd: "+j+"\n\n[\ub0b4 \ud3ec\ucf13\ubaac \uc885\uc871\uac12]\nHP "+h+" / Atk "+g+" / Def "+f+"\nSpA "+e+" / SpD "+d+" / Spe "+i+"\n\n[\uc0c1\ub300 \ud3ec\ucf13\ubaac \uc885\uc871\uac12]\nHP "+B.c.M(c.d)+" / Atk "+B.c.M(c.e)+" / Def "+B.c.M(c.f)+"\nSpA "+B.c.M(c.r)+" / SpD "+B.c.M(c.w)+" / Spe "+B.c.M(c.x))
+b.Q=a3+("\n\n\uc120\ud0dd \uae30\uc220: "+n+"\n\ub0b4 \uc120\ud0dd \ub370\ubbf8\uc9c0: "+m+" / \ucd5c\uace0 \ub370\ubbf8\uc9c0: "+l+"\n\ud0c0\uc785 \uc0c1\uc131: "+A.f(s)+"\ubc30\n\uc790\uc18d \ubcf4\uc815(STAB): "+A.f(k)+"\ubc30\n\uacf5\uaca9 \ubc29\uc2dd: "+j+"\n\n[\ub0b4 \ud3ec\ucf13\ubaac \uc885\uc871\uac12]\nHP "+h+" / Atk "+g+" / Def "+f+"\nSpA "+e+" / SpD "+d+" / Spe "+i+"\n\n[\uc0c1\ub300 \ud3ec\ucf13\ubaac \uc885\uc871\uac12]\nHP "+B.c.M(c.d)+" / Atk "+B.c.M(c.e)+" / Def "+B.c.M(c.f)+"\nSpA "+B.c.M(c.r)+" / SpD "+B.c.M(c.w)+" / Spe "+B.c.M(c.x))
 b.ap(new A.a_j())},
 aE(){this.aY()
 this.t0()},
@@ -62725,7 +62729,8 @@ $S:0}
 A.a_m.prototype={
 $0(){var s=this.a
 s.Jv()
-s.Q=""},
+s.Q=""
+s.as=!1},
 $S:0}
 A.a_j.prototype={
 $0(){},
